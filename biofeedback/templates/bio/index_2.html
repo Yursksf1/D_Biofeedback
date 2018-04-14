@@ -1,0 +1,76 @@
+
+
+
+{% load static %}
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
+    {% block stylesheet %}{% endblock %}
+  </head>
+  <body>
+    <header>
+    </header>
+    <main>
+      <div id = "data">     
+          <div class = valorr>
+            <p>hora</p>
+            <p id="test4">Hora.</p>
+          </div> 
+
+          <div class = valor>
+            <p class = subtitulo>Temperatura</p>
+            <p id="test1">Temperatura.</p>
+            
+          <div class = valor>
+            <p class = subtitulo>SPO</p>
+            <p id="test2">SPO.</p>
+          </div> 
+          
+          <div class = valor>
+            <p class = subtitulo>SPO2</p>
+            <p id="test3">SPO2.</p>
+          </div> 
+      </div>
+          </div> 
+    </main>
+    <footer>
+    </footer>
+    <script src="{% static 'js/jquery-3.1.0.min.js' %}"></script>
+      <script>
+        window.setInterval(function(){
+            var serial = "givemeSerial";
+            $.ajax({
+              url: 'serial',
+              data: {
+                'serial': serial
+              },
+              dataType: 'json',
+              success: function (data) {
+                  //alert(data['serial']);
+                  $("#test1").text(data['serial_1']);
+                  $("#test2").text(data['serial_2']);
+                  $("#test3").text(data['serial_3']);
+
+
+                  var now = new Date();
+                  var outStr = now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
+
+                  $("#test4").text(outStr);
+                  if (data['change']){
+                    $("#test4").addClass("green");
+                  }
+                  else
+                  {
+                    $("#test4").addClass("red");
+                  }
+
+                }
+            });
+        }, 2000);
+  </script>
+  </body>
+</html>

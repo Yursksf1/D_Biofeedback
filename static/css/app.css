@@ -1,0 +1,53 @@
+
+
+
+#data{
+	float: right;
+    background-color: powderblue;
+    text-align: center;
+    width:  300px;
+}
+
+#test1{
+	height: 200px;
+    background-color: #77FF55;
+    margin: 0 0 0 0;
+    font-size: 100px;
+}
+
+#test2{
+	height: 200px;
+    margin: 0 0 0 0;
+    background-color: #77FF55;
+    font-size: 100px;
+}
+
+#test3{
+	height: 200px;
+    margin: 0 0 0 0;
+    background-color: #77FF55;
+    font-size: 100px;
+}
+
+#test4{
+	height: 100px;
+    margin: 0 0 0 0;
+    background-color: powderblue;
+    font-size: 30px;
+}
+
+.subtitulo{
+	height: 50px;
+    font-size: 25px;
+	background-color: #3B7E2A;
+	margin: 0 0 0 0;
+	padding-top: 15px;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}

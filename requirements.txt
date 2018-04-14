@@ -1,0 +1,5 @@
+django == 1.11
+django
+matplotlib
+pyserial==3.4
+bootstrap-admin
